@@ -1,0 +1,52 @@
+﻿
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <body>
+        <div>
+            <h3>MyDirectoire</h3>
+            <td>
+                <form method="get" action="/Home/Index">
+                    <input type="text" name="dl"/>
+                    <button value="text">
+                        Отфильтровать по возрастанию.
+                        </button>
+                    </form></td>
+            <table>
+                <tr><td><p>FileDirectoire</p></td>
+                    <td><p>FileName</p></td>
+                    <td><p>FileSize</p></td><td></td>
+                    <td>
+                        <form method="get" action="/Home/Index">
+                            <input type="hidden" value="true" name="dl"/>
+                            <button value="true">
+                                Отфильтровать по возрастанию.
+                            </button>
+                        </form>
+                    </td>
+                     <td>
+                         <form method="get" action="/Home/Index">
+                             <input type="hidden" value="false" name="dl"/>
+                             <button value="false">
+                                 Отфильтровать поубыванию.
+                             </button>
+                         </form>
+                         </td>
+                </tr>
+                @foreach (MyFiles myFiles  in ViewBag.FileDirectory)
+                {
+                    <tr>
+                        <td><p>@myFiles.Directoire</p></td>
+                        <td><p>@myFiles.Name</p></td>
+                        <td><p>@myFiles.Size Gig</p></td>
+                        <td><form method="post" action="/Home/Index">
+                            <input type="hidden" value="@myFiles.Directoire" name="Directoire" />
+                            <button value="@myFiles.Directoire">
+                                Перейти
+                            </button>
+                        </form></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </body>
+</div>
