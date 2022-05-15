@@ -18,28 +18,28 @@ namespace FileDisplayApp.Context
             File = InitDirectoryFileInfo();
         }
 
-        public List<MyFiles> SetFile(IOrderedEnumerable<MyFiles>  Files)
+        public List<MyFiles> SetFile(IOrderedEnumerable<MyFiles>  files)
         {
-            File = new List<MyFiles>(Files);
+            File = new List<MyFiles>(files);
             return File;
         }
-        public void SetDirectoryFile(string @string)
+        public void SetDirectoryFile(string linkDirectory)
         {
-            File = InitDirectoryFileInfo(@string);
+            File = InitDirectoryFileInfo(linkDirectory);
         }
         
-        private List<MyFiles> InitDirectoryFileInfo(string @string = null)
+        private List<MyFiles> InitDirectoryFileInfo(string linkDirectory = null!)
         {
-            if (@string == null)
+            if (linkDirectory == null)
             {
-                @string = "C:\\";
+                linkDirectory = "C:\\";
             }
 
             List<MyFiles> myFiles = new List<MyFiles>();
 
             foreach (IParser parser  in _parsers)
             {
-                List<MyFiles> info = parser.ParserInfo(@string);
+                List<MyFiles> info = parser.ParserInfo(linkDirectory);
                 myFiles.AddRange(info);
             }
 
