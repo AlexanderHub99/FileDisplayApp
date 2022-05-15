@@ -19,13 +19,13 @@ namespace FileDisplayApp.Script
             }
             catch (Exception e) // Можно обработать ошибку и куда-то вывести 
             {
-                di = new System.IO.DirectoryInfo("I:\\"); //Заглушка
+                di = new System.IO.DirectoryInfo("C:\\"); //Заглушка
                 fileInfos = di.GetFiles();                // Получить ссылку на каждый файл в этом каталоге.
             }
             
             if (di.Exists) // Можно обработать ошибку и куда-то вывести 
             {
-                di = new System.IO.DirectoryInfo("I:\\"); //Заглушка
+                di = new System.IO.DirectoryInfo("C:\\"); //Заглушка
                 fileInfos = di.GetFiles();                // Получить ссылку на каждый файл в этом каталоге.
             }
 

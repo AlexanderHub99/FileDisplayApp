@@ -18,7 +18,7 @@ namespace FileDisplayApp.Script
             }
             catch (Exception e) // Можно обработать ошибку и куда-то вывести 
             {
-                dirs = new List<string>(Directory.EnumerateDirectories("I:\\")); //Заглушка
+                dirs = new List<string>(Directory.EnumerateDirectories("C:\\")); //Заглушка
             }
 
             foreach (string directoryInfo in dirs)
