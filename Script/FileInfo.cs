@@ -34,7 +34,7 @@ namespace FileDisplayApp.Script
                 MyFiles myFiles = new MyFiles();
                 myFiles.Directoire = Convert.ToString(fileInfo.Directory);
                 myFiles.Name = fileInfo.Name;
-                myFiles.Size = Math.Round((double)(fileInfo.Length / 1024 / 1024), 1);
+                myFiles.Size = Math.Round((double)(fileInfo.Length / 1024 / 1024 / 1024), 1);
                 listFiles.Add(myFiles);
             }
 
