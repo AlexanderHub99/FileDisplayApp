@@ -47,8 +47,11 @@ namespace FileDisplayApp.Controllers
         [HttpPost]
         public IActionResult Index(MyFiles myFiles)
         {
-            _context.SetDirectoryFile(myFiles.Directoire);
-            
+            if (myFiles.Directoire != null)
+            {
+                _context.SetDirectoryFile(myFiles.Directoire);
+            }
+
             ViewBag.FileDirectory = _context.File;
 
             return View();
