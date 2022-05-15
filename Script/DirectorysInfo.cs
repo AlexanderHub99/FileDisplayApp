@@ -37,7 +37,7 @@ namespace FileDisplayApp.Script
 
             return listFiles;
         }
-        private double SizeOfFolder(string folder, ref double catalogSize)
+        private double SizeOfFolder(string folder, ref double catalogSize) //Рекурсивный метод , считает вес файла в Gb.
         {
             try
             {
