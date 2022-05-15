@@ -32,7 +32,7 @@ namespace FileDisplayApp.Context
         {
             if (@string == null)
             {
-                @string = "I:\\";
+                @string = "C:\\";
             }
 
             List<MyFiles> myFiles = new List<MyFiles>();
