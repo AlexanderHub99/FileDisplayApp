@@ -15,7 +15,7 @@ namespace FileDisplayApp.Context
         {
             AddService(new DirectorysInfo());
             AddService(new FileInfo());
-            File = InitDirectoryFileInfo();
+            File = InitDirectoryFileInfo("C:\\");//Дефолтное значения для старта программы 
         }
 
         public List<MyFiles> SetFile(IOrderedEnumerable<MyFiles>  files)
@@ -28,13 +28,8 @@ namespace FileDisplayApp.Context
             File = InitDirectoryFileInfo(linkDirectory);
         }
         
-        private List<MyFiles> InitDirectoryFileInfo(string linkDirectory = null!)
+        private List<MyFiles> InitDirectoryFileInfo(string linkDirectory)
         {
-            if (linkDirectory == null)
-            {
-                linkDirectory = "C:\\";
-            }
-
             List<MyFiles> myFiles = new List<MyFiles>();
 
             foreach (IParser parser  in _parsers)
